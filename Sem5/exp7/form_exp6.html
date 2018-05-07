@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Exp3</title>
+<style>
+table,td{
+padding:10px;
+}
+textarea{
+	height:300%;
+	width:100%;
+}
+body{
+	background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+	font-style:30px; 
+	font-family: "Segoe UI",Arial,sans-serif;
+}
+input{
+	outline: none;
+	border:0px 0px 1px 0px;
+}
+input#a{
+	width: 100%;
+}
+h2{
+	font-style:40px; 
+	font-family: "Segoe UI",Arial,sans-serif;
+}
+button{
+	background-color: #ccffcc;
+	border-radius: 5px;
+	padding: 10px;
+	margin-left: 20px;
+	outline: none;
+}
+</style>
+</head>
+<body> 
+<center>
+<form action="validate_exp6.php" method="POST">
+<h2> Registration Form </h2>
+<table>
+  <tr>
+    <td>First Name:</td>
+    <td><input id="a" type="text" name="first_name" ></td>
+  </tr>
+  <tr>
+    <td>Last Name:</td>
+    <td><input id="a" type="text" name="last_name" ></td>
+  </tr>
+  <tr>
+    <td>DOB:</td>
+    <td><input id="a" type="date" name="dob"></td>
+  </tr>
+  <tr>
+    <td>Gender:</td>
+    <td><input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female</td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td><input id="a" type="email"  name="email"></td>
+  </tr>
+  <tr>
+    <td>contact no:</td>
+    <td><input id="a" type="telephone" name="contact"></td>
+  </tr>
+  <tr>
+    <td>Nationality</td>
+<td><select id="a" name="nation">
+<option>India</option>
+<option> USA</option>
+<option> UK</option>
+<option> Canada</option>
+</select></td>
+  </tr>
+  <tr>
+    <td>Address:</td>
+    <td><textarea name="address"></textarea></td>
+  </tr>
+</table>
+<input type="checkbox" name="permission" value="Allowed" >I want to get newsletters.
+<br><br>
+<button type="submit" name="submit">SUBMIT</button>
+<button type="reset">RESET</button> <br><br>
+</form>
+</center>
+</body>
+</html>

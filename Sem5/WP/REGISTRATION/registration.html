@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../STYLE/d.css">
+
+  <!--CHANGES NIKHIL 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="../STYLE/material/css/materialize.min.css">
+  -->
+  <link rel="stylesheet" href="../STYLE/bootstrap/css/bootstrap.min.css">
+  <script src="../STYLE/bootstrap/js/bootstrap.mi.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/bootstrap-slider.min.js"></script>
+<script src="validate.js"></script>
+<script>
+
+$(document).ready(function(){
+   
+$('#percent').slider({
+  formatter: function(value) {
+    return  value+'%';
+  }
+});
+
+$("#passed").click(function() {
+  if(this.checked) {
+    // With JQuery
+    $("#percent").slider("enable");
+
+  }
+  else {
+    // With JQuery
+    $("#percent").slider("disable");
+
+  }
+});
+
+
+});
+</script>
+</head>
+<body>
+
+<div class="p5head" >
+
+<nav class="navbar shadow navbar-inverse navbar-fixed-top"  
+style=" background-color: #c44dff; border:none; padding:10px;font-size: 20px;">
+<div class="container-fluid">
+  <div class="row">
+    <div class="navbar-header" class="col-md-5">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#" style="color:white;font-size:40px;
+      font-family:'samarkannormal';">INFOMENIA
+        <i style="font-size: 15px;">Guide to your Career</i></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar" class="col-md-7">
+      <ul class="nav navbar-nav"> 
+        <li ><a href="../index.html" style="color:white;">Home</a></li>
+        <li><a href="../COLLEGES/colleges.html" style="color:white; background-color: #009999; border-radius:10px;">Find College</a></li>
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
+        <li><a href="../REGISTRATION/registration.php" style="color:white;"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="../LOGIN/login.html" style="color:white;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</nav>
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-5"><img src="../CACHE/login.jpg" width=50% height=50% ></div>
+    <div class="col-md-6">
+  <form class="form-horizontal" id="logF" method = "POST" action="addData.php">
+
+  <div class="form-group">
+    <label class="control-label col-md-2" for="name">Name:</label>
+    <div class="col-md-5">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+    </div>
+     <div class="col-md-5">
+      <p class="text-warning"> &nbsp<span id="sValidateName"> </span></p>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-md-2" for="email">Email:</label>
+    <div class="col-md-5">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+    </div>
+    <div class="col-md-5">
+      <p class="text-warning"> &nbsp<span id="sValidateEmail"> </span></p>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-md-2" for="pwd">Password:</label>
+    <div class="col-md-5"> 
+      <input type="password" class="form-control" id="pwd" name="pwd" placeholder="create password">
+    </div>
+     <div class="col-md-5"> 
+      <p class="text-warning"> &nbsp<span id="sValidatePwd"> </span></p>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-md-2" for="cpwd">Confirm:</label>
+    <div class="col-md-5"> 
+      <input type="password" class="form-control" id="cpwd" placeholder="Confirm password">
+    </div>
+    <div class="col-md-5"> 
+      <p class="text-warning">&nbsp<span id="sValidateCpwd"> </span></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-2" for="branch">Prefered branch:</label>
+    <div class="col-md-10"> 
+     <label class="radio-inline"><input type="radio" name="branch" value="comps" checked>COMPS</label>
+     <label class="radio-inline"><input type="radio" name="branch" value="it">I.T.</label>
+     <label class="radio-inline"><input type="radio" name="branch" value="extc">EXTC</label>
+     <label class="radio-inline"><input type="radio" name="branch" value="etrx">ETRX</label>
+     <label class="radio-inline"><input type="radio" name="branch" value="mech">MECH</label>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-md-2" for="city">Select District:</label>
+    <div class="col-md-10">
+      <select class="form-control" id="city" name="city">
+        <option>MUMBAI</option>
+        <option>PUNE</option>
+        <option>SANGLI</option>
+        <option>OTHER</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class="form-group"> 
+    <div class="col-md-offset-2 col-md-10">
+      <div class="checkbox">
+        <label><input id="passed" name="checkPass" type="checkbox">I have passed 12<sup>th</sup></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-md-2" for="percentage">Percentage:</label>
+    <div class="col-md-10"> 
+      <input id="percent" data-slider-id='percentage' name ="percent" type="text" data-slider-min="40" data-slider-max="100" data-slider-step="1" data-slider-value="75" data-slider-enabled="false"/>
+    </div>
+  </div>
+
+  <div class="form-group"> 
+    <div class="col-md-offset-2 col-md-10">
+      <div class="checkbox">
+        <label><input type="checkbox" id="check" name="check">I accept all terms & conditions</label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-group"> 
+    <div style="float:right;">
+      <input type="submit" name="submit" id="submit" class="btn btn-info"> &nbsp;
+      <input type="Reset" name="Reset" class="btn btn-mute"> 
+    </div>
+  </div>
+</form>
+</div>
+</div>
+
+
+</body>
+<footer id="f" style="background-color: #dd99ff">
+  <div class="row">
+
+      <div class="col-md-4" id="cmtb">
+
+        <a href="https://twitter.com/_CareerGuide?lang=en" id="fn1"><div style="display:block; background-color:grey; font-weight: bold;"><img src="../CACHE/twitter.jpg" 
+          style="margin-left: 1px;" height="60" width="59">&nbsp; &nbsp;  @infomenia
+        </div></a>
+
+        <a href="https://www.facebook.com/GameCareerGuide/" id="fn1"><div style="display:block; background-color: grey;font-weight: bold;"><img src="../CACHE/facebook.jpg" 
+         style="margin-left: 1px;" height="60" width="60">&nbsp; &nbsp; &nbsp; infomenia
+       </div></a>
+
+        <a href="https://plus.google.com/+prospects" id="fn1"><div style="display:block; background-color: grey;font-weight: bold;"><img src="../CACHE/g+.jpg" 
+        style="margin-left: 1px;"  height="60" width="60">&nbsp; &nbsp; +infomenia</div>
+      </a>
+      
+      </div>
+
+     <div class="col-md-4" id="cmtb" >
+              <br>
+             <ul style="text-align: center; text-decoration:none; ">
+              <li><a href="../index.html" id="fn2">Home</a></li><br>
+              <li><a href="../COLLEGES/colleges.html" id="fn2">Find College</a></li><br>
+              <li><a href="p3.html" id="fn2">Write Review</a></li><br>
+              <li><a href="p4.html" id="fn2">Support</a></li><br>
+             </ul>
+            
+      </div>
+
+      <div class="col-md-4" id="cmtb">
+        <h3 style="margin-top: 0px;">INFOMENIA&nbsp;<small>Guide to your career</small> 
+        </h3>
+        <h4>Infomenia Inc.</h4>
+        <address>
+          Vidyavihar 77 , Mumbai <br>
+          Maharashtra
+        </address>
+        <button type="button" class="btn btn-info"><a href="mailto:support@infomenia.com" style="text-decoration: none; color:white;">Email us</a></button>
+      </div>
+    </div>
+    
+</footer>
+</html>

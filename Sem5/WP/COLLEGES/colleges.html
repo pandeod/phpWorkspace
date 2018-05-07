@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Find College</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="sessionCheck.js"></script>
+  <link rel="stylesheet" type="text/css" href="../STYLE/d.css">
+
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../STYLE/AdminLTE.css">
+
+<script type="text/javascript">
+	$(document).ready(function(){
+    $("#flip1").click(function(){
+        $("#panel1").slideToggle("slow");
+    });
+    $("#flip2").click(function(){
+        $("#panel2").slideToggle("slow");
+    });
+    $("#flip3").click(function(){
+        $("#panel3").slideToggle("slow");
+    });
+    $("#flip4").click(function(){
+        $("#panel4").slideToggle("slow");
+    });
+});
+</script>
+</head>
+<body style="background-color: lightgreen;">
+
+<div class="p5head" >
+
+<nav class="navbar shadow navbar-inverse navbar-fixed-top" 
+style=" background-color: #c44dff; border:none; padding:10px;font-size: 20px; ">
+<div class="container-fluid">
+  <div class="row">
+    <div class="navbar-header" class="col-md-5">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#" style="color:white;font-size:40px;
+      font-family:'samarkannormal';">INFOMENIA
+        <i style="font-size: 15px;">Guide to your Career</i></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar" class="col-md-7">
+      <ul class="nav navbar-nav"> 
+        <li ><a href="../index.html" style="color:white;">Home</a></li>
+        <li><a href="../COLLEGES/colleges.html" style="color:white; background-color: #009999; border-radius:10px;">Find College</a></li>
+        <li><a href="p3.html" style="color:white;">Write Review</a></li>
+        <li><a href="p4.html" style="color:white;">Support</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" id="hide">
+       
+      </ul>
+    </div>
+  </div>
+  </div>
+</nav>
+ </div> 
+
+<!-- Begin Content in the page -->
+
+
+
+<div class="row" style="margin:0px;">		
+ 
+
+<!-- Search Result here -->
+	<div class="col-md-12"  >
+		<p style="font-size: 25px;text-align: center; padding:20px;">Find Best colleges Across India</p>
+       
+           <form id="srchForm" style="margin-bottom: 30px; margin-left : 15%">             
+               <input type="text" id="srchIn" style="text-align: center;" 
+               placeholder="Search any College across India" >
+               &nbsp;
+               <button class="btn btn-lg btn-primary" type="submit">Search</button>  
+           </form>
+  </div>          
+ 
+
+</div>
+
+
+<!--Begin Layout college search -->
+          
+
+
+
+
+
+
+<center>
+         <a href="#"> 
+          <div style="background-color: white;height:300px;width:80%;">
+            
+            <div class="shadow" style="margin:0px;float: left;width:25%;height:100%; background-color:lightblue; border:2px solid black;">
+                <img id="coolegeProfile" src="" STYLE="max-width:100%; height:100%;">
+            </div>
+             
+             <div class="shadow row" style="float: left; width:75%;height:100%;margin:0px; background-color:lightyellow;border:2px solid black;">
+              
+              <div class="col-md-2" style="float: middle;height:30%;margin:0px; background-color:lightyellow;">
+              </div>
+              <br>
+              <div  class="col-md-8 shadow" style=" height:30%;margin:0px; background-color:pink;border:2px solid black;">
+              <h1 id="collegeName" STYLE="color:black;"></h1>
+              </div>
+              <div class="col-md-2" style="float: middle; height:30%;margin:0px; background-color:lightyellow;">
+              </div>
+
+               
+               <div class="col-md-2" style="height:30%;margin:50px 0px 0px 0px; background-color:lightyellow;">
+              </div>
+
+               <div class="col-md-2 shadow" style="height:30%;margin:50px 0px 0px 0px; background-color:pink;border:2px solid black;">
+                <h6 STYLE="color:black;">BRANCH</h6>
+                <h2 id="collegeBranch" STYLE="color:black;"></h2>
+              </div>
+              
+               <div class="col-md-1" style="height:30%;margin:50px 0px 0px 0px; background-color:lightyellow;">
+              </div>
+              
+               <div class="col-md-2 shadow" style="height:30%;margin:50px 0px 0px 0px; background-color:pink;border:2px solid black;">
+                <h6 STYLE="color:black;">CITY</h6>
+                <h2 id="collegeCity" STYLE="color:black;"></h2>
+              </div>
+              
+               <div class="col-md-1" style="height:30%;margin:50px 0px 0px 0px;background-color:lightyellow;">
+              </div>
+              
+               <div class="col-md-2 shadow" style="height:30%;margin:50px 0px 0px 0px; background-color:pink;border:2px solid black;">
+                <h6 STYLE="color:black;">FEES</h6>
+                <h2 id="collegeFees" STYLE="color:black;"></h2>
+              </div>
+              
+               <div class="col-md-2" style="height:30%;margin:50px 0px 0px 0px; background-color:lightyellow;">
+              </div>
+              
+
+             </div>
+          </div>
+         </a> 
+<center>
+
+<!--End Layout college search -->  
+
+<br>
+
+
+<!-- End Content in the page -->
+</body>
+<footer id="f" style="background-color: #dd99ff">
+  <div class="row">
+
+      <div class="col-md-4" id="cmtb">
+
+        <a href="https://twitter.com/_CareerGuide?lang=en" id="fn1"><div style="display:block; background-color:grey; font-weight: bold;"><img src="../CACHE/twitter.jpg" 
+          style="margin-left: 1px;" height="60" width="59">&nbsp; &nbsp;  @infomenia
+        </div></a>
+
+        <a href="https://www.facebook.com/GameCareerGuide/" id="fn1"><div style="display:block; background-color: grey;font-weight: bold;"><img src="../CACHE/facebook.jpg" 
+         style="margin-left: 1px;" height="60" width="60">&nbsp; &nbsp; &nbsp; infomenia
+       </div></a>
+
+        <a href="https://plus.google.com/+prospects" id="fn1"><div style="display:block; background-color: grey;font-weight: bold;"><img src="../CACHE/g+.jpg" 
+        style="margin-left: 1px;"  height="60" width="60">&nbsp; &nbsp; +infomenia</div></a>
+      </div>
+
+      <div class="col-md-4" id="cmtb" >
+              <br>
+             <ul style="text-align: center; text-decoration:none; ">
+              <li><a href="../index.html" id="fn2">Home</a></li><br>
+              <li><a href="../COLLEGES/colleges.html" id="fn2">Find College</a></li><br>
+              <li><a href="p3.html" id="fn2">Write Review</a></li><br>
+              <li><a href="p4.html" id="fn2">Support</a></li><br>
+             </ul>
+            
+      </div>
+
+      <div class="col-md-4" id="cmtb">
+        <h3 style="margin-top: 0px;">INFOMENIA&nbsp;<small>Guide to your career</small> 
+        </h3>
+        <h4>Infomenia Inc.</h4>
+        <address>
+          Vidyavihar 77 , Mumbai <br>
+          Maharashtra
+        </address>
+        <button type="button" class="btn btn-info"><a href="mailto:support@infomenia.com" style="text-decoration: none; color:white;">Email us</a></button>
+      </div>
+    </div>
+    
+</footer>
+</html>

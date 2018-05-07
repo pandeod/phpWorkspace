@@ -1,0 +1,43 @@
+[
+  {
+    "institute" :"Amaravati University",
+	"location" :"Amaravati",
+	"website" :"http://www.sgbau.ac.in/",
+	"link"    :"www.sgbau.ac.in"
+  },
+  {
+    "institute" :"Banaras Hindu University (BHU)",
+	"location" :"Banaras",
+	"website" :"http://www.bhu.ac.in/",
+	"link"    :"www.bhu.ac.in"
+  },
+  {
+    "institute" :"Allahabad University (AU)",
+	"location" :"UP",
+	"website" :"http://www.allduniv.edu/",
+	"link"    :"www.allduniv.edu"
+  },
+  {
+    "institute" :"Bharati Vidyapeeth Deemed University ",
+	"location" :"Pune",
+	"website" :"http://www.bharatividyapeeth.edu/",
+	"link"    :"www.bharatividyapeeth.edu"
+  },{
+    "institute" :"Forest Research Institute",
+	"location" :"MP",
+	"website" :"http://fri.icfre.gov.in/",
+	"link"    :"fri.icfre.gov.in"
+  },
+  {
+    "institute" :"Guru Nanak Dev University",
+	"location" :"Punjab",
+	"website" :"http://www.gndu.ac.in/",
+	"link"    :"www.gndu.ac.in"
+  },
+  {
+    "institute" :"Indian Institute of Foreign Trade (IIFT)",
+	"location" :"New Delhi",
+	"website" :"http://www.iift.edu/",
+	"link"    :"www.iift.edu"
+  }
+]

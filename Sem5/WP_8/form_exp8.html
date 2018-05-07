@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+ font-family:Georgia, Serif;
+ }
+ 
+ th,td,table{
+  border:1px solid black;
+  border-collapse:collapse;
+  padding:10px;
+  }
+  tr{
+    background-color:lightgrey;
+   }
+  tr:hover{
+   background-color:white;
+  }
+</style>
+</head>
+<body>
+<center>
+<h2>List of Top Institutes in India</h2> <br><br>
+<div >
+<table id="id01">
+
+</table>
+</div>
+</center>
+<script>
+var xmlhttp = new XMLHttpRequest();
+var source = "data.json";
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var myArr = JSON.parse(xmlhttp.responseText);
+        myFunction(myArr);
+    }
+}
+xmlhttp.open("GET", source, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+    var out = "<tr style=' background-color:lightgrey;'> <th>Institute</th> <th>Location</th> <th>Website</th> </tr>";
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out+= '<tr><td>' +arr[i].institute + '</td> <td>'+arr[i].location+'</td> <td><a href="' + arr[i].website + '">' +arr[i].link + '</a> </td></tr>';
+    }
+    document.getElementById("id01").innerHTML = out;
+}
+</script>
+
+</body>
+</html>
