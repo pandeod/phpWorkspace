@@ -41,12 +41,27 @@
     min-height: 27px;
     }    
     }
-    textarea { 
+    #textBox { 
         height:350px; 
         min-height:350px;  
         max-height:350px;
         resize: none;
     }
+    #summaryBox {
+        height:360px; 
+        min-height:360px;  
+        max-height:360px;
+        resize: none;
+    }
+    footer{
+        clear: both;
+        position: relative;
+        text-align: center;
+        padding-top: 4em;
+        z-index: 10;
+        height: 3em;
+        margin-top: -1em;
+    }    
   </style>
 
 <!-- image upload -->
@@ -108,8 +123,8 @@
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -183,7 +198,7 @@
                     <!-- Trigger the modal with a button -->
                         <div class="row" style="margin-top:5%;">
                             <div class="col-sm-offset-2 col-sm-4">
-                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Summarize</button>
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="summarize_btn">Summarize</button>
                             </div>
                         </div>
 
@@ -196,8 +211,23 @@
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Your Summary</h4>
                             </div>
-                            <div class="modal-body">
-                                <textarea class="form-control" id="textBox" rows="4" cols="4" style="resize:none;"></textarea>
+                            <div class="modal-body" style="background-color:white">
+                                <div class="row" style="margin:10px;">
+                                    <div class="col-sm-7" style="padding: 20px;height:400px;">
+                                        <textarea class="form-control" style=" border: 1px solid black; border-radius: 10px;background-color: white" id="summaryBox"></textarea>
+                                    </div>
+                                    <div class="col-sm-5" style="padding: 50px;height:400px;">
+                                        <h4 style="margin-top:10%;">Save summary as ...</h4>
+                                        <div class="dropdown" style="margin-top:10%;">
+                                            <select class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                                                <option role="menuitem">txt file</option>
+                                                <option role="menuitem">PDF</option>
+                                                <option role="menuitem">Doc</option>
+                                            </select>
+                                        </div>
+                                        <button type="button" style="margin-top:10%;width:100px;" class="btn btn-info" id="download_summary">Download</button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
@@ -210,7 +240,9 @@
 </div>
 
 </body>
-
+<footer>
+    &copy;2018 Saaransh | Text Summarizer
+</footer>
 <!-- Image upload -->
     
 <script>
@@ -273,6 +305,19 @@
                     return false;
                 }
             });
+
+            //modal text display
+            $("#summarize_btn").click(function(){
+                var input_text=$("#textBox").val().toString();
+                $("#summaryBox").text(input_text+"");
+            });
+
+            document.getElementById("download_summary").onclick = function() {
+                // when clicked the button
+                var content = document.getElementById('summaryBox').value;
+                // a [save as] dialog will be shown
+                window.open("data:application/txt," + encodeURIComponent(content), "_self");
+            }
         });
         </script>
         <!-- image upload -->

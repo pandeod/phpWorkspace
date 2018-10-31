@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+      .navbar {
+    min-height: 80px;
+    }
+    .offset-at-header{
+    height: 80px;
+    line-height: 80px;
+    }
+
+    .navbar-brand {
+    padding: 10px;
+    height: 80px;
+    line-height: 80px;
+    }
+
+    .navbar-toggle {
+    /* (80px - button height 34px) / 2 = 23px */
+    margin-top: 23px;
+    padding: 9px 10px !important;
+    }
+
+    @media (min-width: 768px) {
+    .navbar-nav > li > a {
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-top: 26.5px;
+        padding-bottom: 26.5px;
+        line-height: 27px;
+    }
+
+    .offset-at-header{
+    min-height: 27px;
+    }    
+    }
+    textarea { 
+        height:350px; 
+        min-height:350px;  
+        max-height:350px;
+        resize: none;
+    }
+    footer{
+        clear: both;
+        position: relative;
+        text-align: center;
+        padding-top: 4em;
+        z-index: 10;
+        height: 3em;
+        margin-top: -1em;
+    }  
+    body{
+        height: 100%;
+        min-height:100%;
+    }  
+  </style>
+
+</head>
+<body>
+
+<div id="navigation_div">
+    <nav class="navbar navbar-default navbar-fixed-top bg-info">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="logo.png" height="90%"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="#">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+    </nav>
+</div>
+
+<div class="offset-at-header"></div>
+<div class="row">
+    <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3" style="padding: 20px;">
+            today&#39;s world, tremendous information is available in digital format. For human
+            beings, it is difficult to manually extract the summary of large documents. There is plenty
+            of text material available on the Internet. Hence, there is a problem of searching for
+            relevant documents from the number of documents available and collecting relevant
+            information from it. The automatic text summarization can help us through this. Text
+            summarization is the process of identifying the most important meaningful information in
+            a document or set of related documents and compressing them into a shorter version
+            preserving its overall meanings Here, we aim to develop a web application which will
+            help the user to summarize documents. <br>
+            Text summarization is the task of generating a summary of a text. Text
+            summarization helps the user with the most relevant summary to his query thereby
+            reducing saving his time and efforts. Text summarization has two approaches extractive
+            and abstractive but the extractive approach to text summarization is more common and
+            more prevalent. Here we will be using an extractive approach with rule-based and
+            unsupervised learning. Unsupervised learning helps to detect relations among sentences
+            while rule-based approach scores sentences using keywords, phrases, the position of
+            sentences, etc. Keeping all this in mind we will be designing a web app which will
+            generate relevant summaries according to a user query. Here, we are using extractive
+            approach for text summarization. We will be using Open American National Corpus and
+            the English Wikipedia Corpus as a database for our system. With all these aspects, we
+            will be designing a web application which will generate relevant summaries according to
+            a user query.
+    </div>
+</div>
+
+</body>
+<footer>
+    &copy;2018 Saaransh | Text Summarizer
+</footer>
+</html>

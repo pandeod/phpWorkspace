@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+      .navbar {
+    min-height: 80px;
+    }
+    .offset-at-header{
+    height: 80px;
+    line-height: 80px;
+    }
+
+    .navbar-brand {
+    padding: 10px;
+    height: 80px;
+    line-height: 80px;
+    }
+
+    .navbar-toggle {
+    /* (80px - button height 34px) / 2 = 23px */
+    margin-top: 23px;
+    padding: 9px 10px !important;
+    }
+
+    @media (min-width: 768px) {
+    .navbar-nav > li > a {
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-top: 26.5px;
+        padding-bottom: 26.5px;
+        line-height: 27px;
+    }
+
+    .offset-at-header{
+    min-height: 27px;
+    }    
+    }
+    textarea { 
+        height:350px; 
+        min-height:350px;  
+        max-height:350px;
+        resize: none;
+    }
+    footer{
+        clear: both;
+        position: relative;
+        text-align: center;
+        padding-top: 4em;
+        z-index: 10;
+        height: 3em;
+        margin-top: -1em;
+    }
+  </style>
+
+</head>
+<body>
+
+<div id="navigation_div">
+    <nav class="navbar navbar-default navbar-fixed-top bg-info">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="logo.png" height="90%"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="active"><a href="#">Contact</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+    </nav>
+</div>
+
+<div class="offset-at-header"></div>
+<div class="row">
+        <div class="col-sm-offset-3 col-sm-6 col-sm-offset-3" style="padding: 20px;text-align: center;">
+                B.Tech Project @ KJSCE <br> <br>
+                By<br>
+                Onkar Pande (1514098) <br>
+                Ankit Ramani(1514102) <br>
+        </div>
+    </div>
+
+</body>
+<footer>
+    &copy;2018 Saaransh | Text Summarizer
+</footer>
+</html>
