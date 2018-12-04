@@ -342,20 +342,20 @@
                 
                 switch(v)
                 {
-                    case 'txt' : download("summary.txt",content.toString(),'text/plain');
+                    case 'txt' : Export2Txt(content.toString());
                                 break;
                     case 'pdf' : printPDF(content.toString());
                                 break;
                     case 'doc' : Export2Doc(content.toString());
                                 break;
-                   //default : download("summary.txt",content.toString(),'text/plain');
+                    default : Export2Txt(content.toString());
                 }
             }
 
-            function download(filename, text , documentType) {
+            function Export2Txt(text) {
             var element = document.createElement('a');
-            element.setAttribute('href', 'data:'+documentType+';charset=utf-8,' + encodeURIComponent(text));
-            element.setAttribute('download', filename);
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', "summary.txt");
 
             element.style.display = 'none';
             document.body.appendChild(element);
@@ -366,17 +366,89 @@
 
 
             function printPDF(text) {
-                // @param 1 - Coordinate (in units declared at inception of PDF document) against left edge of the page
-                // @param 2 - Coordinate (in units declared at inception of PDF document) against upper edge of the page
-                // @param 3 - String or array of strings to be added to the page. Each line is shifted one line down per font, spacing settings declared before this call.
-                const pdf = new jsPDF();
-                pdf.text(20, 20, text);
-                // save the PDF document (downloadable)
-                pdf.save("Summary.pdf");
+                
+                var lMargin=15; //left margin in mm
+                var rMargin=15; //right margin in mm
+                var pdfInMM=210;  // width of A4 in mm
+
+                var pdf = new jsPDF("p","mm","a4");
+                
+                var lines =pdf.splitTextToSize(text, (pdfInMM-lMargin-rMargin));
+                pdf.text(lMargin,20,lines);
+                
+                pdf.save('Summary.pdf');
+
+                // var options = {
+                //         pagesplit: true
+                //     };
+
+                // pdf.fromHTML(source, options, function()
+                // {
+                //     pdf.save("Summary.pdf");
+                // });
+
+                // var preHtml = "<html><head><meta charset='utf-8'><title>Summary</title></head><body>";
+                // var postHtml = "</body></html>";
+                // var source = preHtml+text+postHtml;
+
+
+                // margins = {
+                //     top: 0,
+                //     bottom: 0,
+                //     left: 0,
+                //     width: 512
+                // };
+
+                // pdf.fromHTML(
+                //     source, // HTML string or DOM elem ref.
+                //     margins.left, // x coord
+                //     margins.top, { // y coord
+                //         'width': margins.width, // max width of content on PDF
+                //     },function (dispose) {
+                //         // dispose: object with X, Y of the last line add to the PDF 
+                //         //          this allow the insertion of new lines after html
+                //         // save the PDF document (downloadable)
+                //         pdf.save('Summary.pdf');
+                //     }, margins);
+            }
+
+            function Export2PDF(text){
+                var preHtml = "<html><head><meta charset='utf-8'><title>Summary</title></head><body>";
+                var postHtml = "</body></html>";
+                var html = preHtml+text+postHtml;
+
+                var blob = new Blob(['\ufeff', html], {
+                    type: 'application/pdf'
+                });
+                
+                // Specify link url
+                var url = 'data:application/pdf,' + encodeURIComponent(html);
+                
+                // Specify file name
+                filename = 'summary.pdf';
+                
+                // Create download link element
+                var downloadLink = document.createElement("a");
+
+                document.body.appendChild(downloadLink);
+                
+                if(navigator.msSaveOrOpenBlob ){
+                    navigator.msSaveOrOpenBlob(blob, filename);
+                }else{
+                    // Create a link to the file
+                    downloadLink.href = url;
+                    
+                    // Setting the file name
+                    downloadLink.download = filename;
+                    
+                    //triggering the function
+                    downloadLink.click();
+                }
+                document.body.removeChild(downloadLink);
             }
             
             function Export2Doc(text){
-                var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+                var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Summary</title></head><body>";
                 var postHtml = "</body></html>";
                 var html = preHtml+text+postHtml;
 
